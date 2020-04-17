@@ -6,14 +6,21 @@
 
 $(document).ready( function() {
 
+  var boxDaClick;
+  var finito = false;
+
   for(var i = 0; i < 36; i++) {
     $(".container").append('<div class="box"></div>');
   }
 
+  boxDaClick = i;
+
   $(".box").click(
     function () {
       var self = $(this);
-      if (self.hasClass("cliccato")) {
+      if (finito) {
+        alert("HAI FINITO, SMETTILA DI CLICCARE!!!");
+      } else if (self.hasClass("cliccato")) {
         alert("L'HAI GIA CLICCATO, FURBONE!");
       } else {
         $.ajax({
@@ -26,6 +33,11 @@ $(document).ready( function() {
               self.addClass("yellow cliccato");
             } else {
               self.addClass("green cliccato");
+            }
+            boxDaClick--;
+            if(boxDaClick == 0) {
+              alert("Hai cliccato tutti i quadratini, complimenti!");
+              finito = true;
             }
           },
           error: function (richiesta, stato, errore) {

@@ -8,17 +8,25 @@ $(document).ready( function() {
 
   $(".box").click(
     function () {
+      var self = $(this);
       $.ajax({
         url: "https://flynn.boolean.careers/exercises/api/random/int",
         method: "GET",
         success: function (data, stato) {
-          console.log(data);
+          var randomNum = data.response;
+          self.text(randomNum);
+          if(randomNum <= 5) {
+            self.removeClass("green");
+            self.addClass("yellow");
+          } else {
+            self.removeClass("yellow");
+            self.addClass("green");
+          }
         },
         error: function (richiesta, stato, errore) {
-          console.log(errore);
+          alert("Errore: " + errore);
         }
       });
     }
   );
-
 });

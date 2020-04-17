@@ -6,6 +6,10 @@
 
 $(document).ready( function() {
 
+  for(var i = 0; i < 36; i++) {
+    $(".container").append('<div class="box"></div>');
+  }
+
   $(".box").click(
     function () {
       var self = $(this);

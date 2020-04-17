@@ -46,10 +46,25 @@ main {
   color: #21243d;
 }
 
+.box:hover {
+  cursor: pointer;
+  background-color: #fff;
+}
+
 .green {
   background-color: green;
 }
 
+.green:hover {
+  cursor: default;
+  background-color: green;
+}
+
 .yellow {
+  background-color: yellow;
+}
+
+.yellow:hover {
+  cursor: default;
   background-color: yellow;
 }

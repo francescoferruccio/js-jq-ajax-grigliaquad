@@ -7,25 +7,43 @@
 body {
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  background-color: #21243d;
+  font-family: sans-serif;
+}
+
+header {
+  height: 10vh;
+  color: #fff;
+  display: flex;
+  align-items: flex-end;
+}
+
+main {
+  height: 90vh;
+  display: flex;
   align-items: center;
 }
 
 .container {
-  flex-basis: 600px;
-  flex-shrink: 0;
+  width: 600px;
+  height: 600px;
   display: flex;
   flex-wrap: wrap;
 }
 
 .box {
-  width: 100px;
-  height: 100px;
-  border: 1px solid black;
+  width: 98px;
+  height: 98px;
+  margin: 0 2px 2px 0;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 30px;
+  background-color: rgba(255, 255, 255, 0.7);
+  color: #21243d;
 }
 
 .green {
